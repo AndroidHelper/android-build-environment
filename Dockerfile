@@ -8,7 +8,7 @@ RUN dpkg --add-architecture i386                                    && \
     apt-get clean
 
 # Install Java 8
-    wget -q --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz && \
+RUN wget -q --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz && \
     tar -xzf jdk-8u144-linux-x64.tar.gz -C /usr/local && \
     rm jdk-8u144-linux-x64.tar.gz
 
