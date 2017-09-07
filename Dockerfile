@@ -27,20 +27,8 @@ ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 ENV PATH $PATH:$ANDROID_HOME/build-tools/26.0.1
 
-RUN echo yes | android update sdk --no-ui --all --filter platform-tools             && \
-    echo yes | android update sdk --no-ui --all --filter build-tools-26.0.1         && \
-    echo yes | android update sdk --no-ui --all --filter android-26                 && \
-    echo yes | android update sdk --no-ui --all --filter android-25                 && \
-    echo yes | android update sdk --no-ui --all --filter extra-android-m2repository && \
-    echo yes | android update sdk --no-ui --all --filter extra-google-m2repository  && \
-    echo yes | android update sdk --no-ui --all --filter extra-android-support
-
-# # Install Android NDK
-# RUN wget -q http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin && \
-#     chmod a+x android-ndk-r10e-linux-x86_64.bin                                && \
-#     ./android-ndk-r10e-linux-x86_64.bin -o/usr/local                           && \
-#     rm android-ndk-r10e-linux-x86_64.bin
-
-# # 配置 Android NDK 环境变量
-# ENV NDK_HOME /usr/local/android-ndk-r10e
-# ENV PATH $PATH:$NDK_HOME
+RUN sdkmanager \
+    "platforms;android-26" \
+    "build-tools;26.0.1" \
+    "extras;android;m2repository" \
+    "extras;google;m2repository"
