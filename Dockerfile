@@ -3,7 +3,7 @@ MAINTAINER JianyingLi <lijy91@foxmail.com>
 
 RUN dpkg --add-architecture i386                                    && \
     apt-get update                                                  && \
-    apt-get install -y wget                                         && \
+    apt-get install -y wget unzip                                   && \
     apt-get install -y libncurses5:i386 libstdc++6:i386 zlib1g:i386 && \
     apt-get clean
 
