@@ -1,6 +1,6 @@
 # android-build-environment
 
-Docker repository for android build environment Edit
+Docker repository for android build environment
 
 [![Build Status][travis-image]][travis-url]
 [![Join the chat at https://gitter.im/blankapp/ui][gitter-image]][gitter-url]
