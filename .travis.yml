@@ -5,6 +5,3 @@ services:
 
 before_install:
   - docker build -t lijy91/android-build-environment .
-
-script:
-  - docker images

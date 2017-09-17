@@ -2,37 +2,93 @@
 
 Docker repository for android build environment Edit
 
-[![Build Status](https://api.travis-ci.org/lijy91/android-build-environment.svg?branch=master)](https://travis-ci.org/lijy91/android-build-environment)
+[![Build Status][travis-image]][travis-url]
+[![Join the chat at https://gitter.im/blankapp/ui][gitter-image]][gitter-url]
 
-## 如何使用
+[travis-image]: https://travis-ci.org/lijy91/android-build-environment.svg?branch=master
+[travis-url]: https://travis-ci.org/lijy91/android-build-environment
+[gitter-image]: https://img.shields.io/gitter/room/blankapp/ui.svg
+[gitter-url]: https://gitter.im/blankapp/ui?utm_source=share-link&utm_medium=link&utm_campaign=share-link
 
-该镜像已经发布到 DaoCloud 的公共仓库中，直接使用 [daocloud.io/lijy91/android-build-environment](https://dashboard.daocloud.io/packages/dcbc375b-58a1-467b-9c88-73e476901c32) 镜像即可。
+Table of Contents
+=================
 
-Dockerfile
+* [How to use this image](#how-to-use-this-image)
+    * [Running in your computer](#running-in-your-computer)
+    * [Running in <a href="https://travis-ci.org">Travis CI</a>](#running-in-travis-ci)
+* [How to build](#how-to-build)
+    * [Prerequisites](#prerequisites)
+    * [To build the container image:](#to-build-the-container-image)
+* [Discussion](#discussion)
+* [License](#license)
 
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
+## How to use this image
+
+### Running in your computer
+
+Pull this image to your computer
+
+```bash
+$ docker pull lijy91/android-build-environment
 ```
-FROM daocloud.io/lijy91/android-build-environment
+
+To build an android app
+
+```bash
+$ cd /path/to/your/android/source/root
+$ docker run -i -v $PWD:/project -t lijy91/android-build-environment /bin/bash /project/gradlew clean
 ```
 
-## 已安装环境
+### Running in [Travis CI](https://travis-ci.org)
 
-- [x] Oracle Java JDK 7 (7u79)
-- [x] Oracle Java JDK 8 (8u66)
-- [x] Android SDK
-- [ ] ~~Android NDK（安装NDK会造成构建时间过长和镜像过大问题）~~
+```bash
+Coming soon.
+```
+
+## How to build
+
+### Prerequisites
+
+Before starting make sure you have:
+
+- Installed [Docker](https://docker.com)
+
+### To build the container image:
+
+```bash
+$ docker build -t lijy91/android-build-environment .
+```
+
+## Discussion
+
+If you have any suggestions or questions about this project, you can discuss it by [Gitter](https://gitter.im/blankapp/ui) or my private wechat.
+
+![](http://blankapp.org/assets/images/wechat_qrcode.png)
 
 ## License
 
-    Copyright (C) 2015 JianyingLi <lijy91@foxmail.com>
+```
+MIT License
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+Copyright (c) 2017 JianyingLi <lijy91@foxmail.com>
 
-        http://www.apache.org/licenses/LICENSE-2.0
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
